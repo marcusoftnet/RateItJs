@@ -1,0 +1,39 @@
+{
+  "name": "RateItJs",
+  "version": "0.0.1",
+  "description": "A simple way for some to track what someone thinks about something",
+  "main": "app.js",
+  "dependencies": {
+      "express": "~3.4.4",
+      "mongoose" : "~3.6.2"
+  },
+  "devDependencies": {
+      "mocha": "1.17.*",
+      "should": "3.1.*",
+      "superagent": "*",
+      "nodemon" : "*"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemn app.js",
+    "test": "./node_modules/mocha/bin/mocha -u bdd -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/marcusoftnet/RateItJs.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "angularjs",
+    "mongo"
+  ],
+  "author": "Marcus Hammarberg (@marcusoftnet)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcusoftnet/RateItJs/issues"
+  },
+  "homepage": "https://github.com/marcusoftnet/RateItJs"
+}
