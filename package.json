@@ -17,8 +17,8 @@
     "test": "test"
   },
   "scripts": {
-    "start": "./node_modules/nodemon/bin/nodemn app.js",
-    "test": "./node_modules/mocha/bin/mocha -u bdd -R spec"
+    "start": "./node_modules/nodemon/bin/nodemon.js app.js",
+    "test":  "./node_modules/mocha/bin/mocha -u bdd -R spec"
   },
   "repository": {
     "type": "git",
