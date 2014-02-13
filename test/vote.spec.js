@@ -13,7 +13,7 @@ describe("Vote model", function () {
 	var v;
 	beforeEach(function (done) {
 		v = new Vote();
-		v.organization = "RS Bungsu";
+		v.organization = "Bungsu Hospital";
 		v.voteValue = 3;
 		v.tags = ['tag1', 'tag2', 'tag3'];
 		v.postedFrom = "192.1.1.1";
@@ -42,7 +42,7 @@ describe("Vote model", function () {
 	});
 	it("sets today as default vote date", function (done) {
 		v.voteDate.should.not.be.emtpy;
-		v.voteDate.should.eql(new Date());
+		v.voteDate.should.be.instanceOf(Date);
 		done();
 	});
 	it("allows an array of tags", function (done) {

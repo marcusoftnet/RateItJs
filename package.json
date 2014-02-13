@@ -10,6 +10,7 @@
   "devDependencies": {
       "mocha": "1.17.*",
       "should": "3.1.*",
+      "supertest": "*",
       "superagent": "*",
       "nodemon" : "*"
   },
@@ -18,7 +19,7 @@
   },
   "scripts": {
     "start": "./node_modules/nodemon/bin/nodemon.js app.js",
-    "test":  "./node_modules/mocha/bin/mocha -u bdd -R spec"
+    "test":  "clear; ./node_modules/mocha/bin/mocha -u bdd -R spec"
   },
   "repository": {
     "type": "git",

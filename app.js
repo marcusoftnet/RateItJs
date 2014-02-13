@@ -20,8 +20,9 @@ app.configure(function () {
 });
 
 // load routes
-//require('./app/routes')(app);
+require('./app/routes')(app);
 
-// start it up
 app.listen(config.port);
-console.log("RateItJs (in '" + config.mode + "' mode) listening on port" + config.port);
+console.log("RateItJs (in '" + config.mode + "' mode) listening on port " + config.port);
+
+module.exports.app = app;
