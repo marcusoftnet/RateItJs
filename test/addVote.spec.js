@@ -5,13 +5,18 @@ var app = require("../app.js").app;
 
 describe("Adding votes", function () {
 	var vote = {
-			voteValue : 1,
-			organization : "Rumah Sakit Bungsu",
-			tags : ["tag 1", "tag 2", "tag 3"]
-		};
+		voteValue : 1,
+		organization : "Rumah Sakit Bungsu",
+		tags : "tag 1,tag 2,tag 3"
+	};
 
 	beforeEach(function (done) {
-		Vote.find({}).remove();
+		//Vote.find({}).remove();
+		done();
+	});
+
+	after(function (done) {
+		//Vote.find({}).remove();
 		done();
 	});
 
@@ -28,9 +33,11 @@ describe("Adding votes", function () {
 		var createdVote = JSON.parse(res.text);
 		createdVote.voteValue.should.be.equal(vote.voteValue);
 		createdVote.organization.should.be.equal(vote.organization);
-		createdVote.tags.should.containEql(vote.tags[0]);
-		createdVote.tags.should.containEql(vote.tags[1]);
-		createdVote.tags.should.containEql(vote.tags[2]);
+
+		createdVote.tags.length.should.equal(3);
+		createdVote.tags.should.containEql("tag 1");
+		createdVote.tags.should.containEql("tag 2");
+		createdVote.tags.should.containEql("tag 3");
 
 		createdVote.postedFrom.should.be.equal("127.0.0.1");
 		createdVote.voteDate.should.not.be.empty;

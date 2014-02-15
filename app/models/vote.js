@@ -4,7 +4,7 @@ var voteSchema = mongoose.Schema({
 	voteValue : Number,
 	organization : String,
 	voteDate:  Date,
-	tags : [{type : String}],
+	tags : [String],
 	postedFrom : String
 });
 

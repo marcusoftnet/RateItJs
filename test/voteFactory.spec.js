@@ -8,7 +8,7 @@ describe("Creating Votes from posted data", function () {
 		postedData = {
 			voteValue : 1,
 			organization : "Bungsu Hospital",
-			tags : ['tag 1', 'tag 2', 'tag 3']
+			tags : "tag 1,tag 2,tag 3"
 		};
 
 		req = { ip : "192.1.1.1"};
@@ -25,9 +25,11 @@ describe("Creating Votes from posted data", function () {
 		vote.voteValue.should.be.equal(postedData.voteValue);
 		vote.organization.should.be.equal(postedData.organization);
 		vote.postedFrom.should.be.equal(req.ip);
-		vote.tags.should.containEql(postedData.tags[0]);
-		vote.tags.should.containEql(postedData.tags[1]);
-		vote.tags.should.containEql(postedData.tags[2]);
+
+		vote.tags.length.should.equal(3);
+		vote.tags.should.containEql("tag 1");
+		vote.tags.should.containEql("tag 2");
+		vote.tags.should.containEql("tag 3");
 		done();
 	});
 	it("created default values", function (done) {
