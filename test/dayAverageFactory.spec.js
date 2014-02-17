@@ -1,7 +1,7 @@
 var should = require("should");
 var DayAverageFactory = require("../app/models/dayAverageFactory");
 
-describe("Converting raw data to dayAverage datastructure", function () {
+describe("Converting raw data to dayAverage report", function () {
 	var converted;
 	var rawData = [{
         "_id": "52ff79caac4a440828000001",
@@ -49,5 +49,13 @@ describe("Converting raw data to dayAverage datastructure", function () {
     it("creates the correct number of rows", function (done) {
 		converted.graphData.length.should.equal(rawData.length);
 		done();
+    });
+});
+
+describe("Converting errornous raw data to dayAverage report", function () {
+    it("returns an empty report for empty array", function (done) {
+        var converted = DayAverageFactory.transform([]);
+        converted.should.eql([]);
+        done();
     });
 });
