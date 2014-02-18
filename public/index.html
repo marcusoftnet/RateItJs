@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html data-ng-app="rateItApp">
+<head>
+  <!-- SCROLLS -->
+  <!-- load bootstrap and fontawesome via CDN -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!-- SPELLS -->
+  <!-- load jquery, bootstrap, and angular via CDN -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script>
+  <script src="/js/controllers/voteController.js"></script>
+  <script src="/js/services/voteService.js"></script>
+  <script src="/js/scripts.js"></script>
+</head>
+<body data-ng-controller="voteController">
+	<header>
+		<nav class="navbar navbar-default">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="/">Rate It</a>
+			</div>
+		</div>
+		</nav>
+	</header>
+	<div id="main">
+		<div class="row">
+			<div class="col-sm-6 col-lg-12">
+				<div class="jumbotron text-left">
+					<h2>What did you think about your visit?</h2>
+					<form>
+						<div>
+							<input type="hidden" data-ng-model="voteData.organization" value="RSBungsu" />
+							<input type="hidden" data-ng-model="voteData.tags" value="tag1,tag2,tag3" />
+							<input type="radio" value="1" data-ng-model="voteData.voteValue" id="voteValue" name="voteValue"> :( - Displeased <br />
+							<input type="radio" value="2" data-ng-model="voteData.voteValue" id="voteValue" name="voteValue"> :| - Meh! <br />
+							<input type="radio" value="3" data-ng-model="voteData.voteValue" id="voteValue" name="voteValue"> :) - Nice! <br />
+							<input type="radio" value="4" data-ng-model="voteData.voteValue" id="voteValue" name="voteValue"> :D - Awesome, above expectations! <br />
+							<button class="btn btn-primary" data-ng-click="addVote()">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-6 col-lg-12">
+				<div class="jumbotron text-left">
+					<h2>Result here</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- FOOTER -->
+	<footer class="text-center">
+		Created by <a href="http://twitter.com/marcusoftnet">Marcus Hammarberg</a>, (c) <a href="http://www.marcusoft.net" target="_blank">www.marcusoft.net</a>
+		<br />
+		Improve this code by <a href="https://github.com/marcusoftnet/RateItJs/issues" target="_blank">reporting a bug or improvement</a> on <a href="https://github.com/marcusoftnet/RateItJs" target="_blank">GitHub</a>
+	</footer>
+</body>
+</html>
